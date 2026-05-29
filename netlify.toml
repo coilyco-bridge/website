@@ -1,0 +1,9 @@
+# docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "pnpm build"
+  publish = "public"
+
+[build.environment]
+  NETLIFY_USE_PNPM = "true"
+  NODE_VERSION = "22"

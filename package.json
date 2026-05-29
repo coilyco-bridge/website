@@ -1,0 +1,37 @@
+{
+  "name": "coilyco-bridge",
+  "description": "Coily Co Bridge website",
+  "version": "1.0.0",
+  "author": "Kai Siren <coilysiren@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
+  "dependencies": {
+    "gatsby": "^5.16.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.7.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "core-js",
+      "esbuild",
+      "gatsby",
+      "gatsby-cli",
+      "lmdb",
+      "msgpackr-extract",
+      "sharp"
+    ]
+  },
+  "scripts": {
+    "build": "gatsby clean && gatsby build",
+    "dev": "gatsby clean && gatsby develop",
+    "serve": "gatsby serve --port 8000 --host 0.0.0.0",
+    "typecheck": "tsc --noEmit"
+  }
+}

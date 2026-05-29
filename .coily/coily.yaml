@@ -1,0 +1,33 @@
+# Per-repo command allowlist for the Coily Co Bridge website.
+# Coily is the canonical entry point for dev verbs; the lockdown denies bare
+# pnpm/npx invocations, so operators (human or agent) type `coily <verb>`.
+# Each command delegates to a package.json script; Netlify builds with pnpm.
+
+commands:
+  install:
+    run: pnpm install
+    description: Install dependencies and write pnpm-lock.yaml.
+  dev:
+    run: pnpm dev
+    description: gatsby clean + gatsby develop. Local dev server with HMR.
+  build:
+    run: pnpm build
+    description: gatsby clean + gatsby build. Produces public/.
+  serve:
+    run: pnpm serve
+    description: gatsby serve on port 8000 (host 0.0.0.0). Serves the build/ output.
+  typecheck:
+    run: pnpm typecheck
+    description: tsc --noEmit.
+
+# Catalog metadata for the cross-repo knowledge graph.
+# Schema: coilysiren/agentic-os-kai#420 (tracker).
+catalog:
+  kind: Component
+  type: website
+  system: content
+  owner: kai
+  lifecycle: production
+  description: "bridge.coilysiren.me. Coily Co Bridge — internal command / console surface."
+  dependsOn:
+    - forgejo.coilysiren.me/coilysiren/infrastructure
